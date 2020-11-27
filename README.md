@@ -1,4 +1,6 @@
-![image-20201127164013497](C:\Users\yajin\AppData\Roaming\Typora\typora-user-images\image-20201127164013497.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2020112717145212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0NDUxOTA5,size_16,color_FFFFFF,t_70)
+
+GitHub：https://github.com/monijuan/2048-python
 
 CSDN：https://blog.csdn.net/qq_34451909/article/details/110237769
 
