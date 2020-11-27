@@ -5,22 +5,36 @@
 # @File      :core.py
 # @Software  :PyCharm
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+import os
 import map
 import control
+import move
+from direction import Direction
 
 def main():
-    # init
-    MAP=map.Map(4)
+    mapsize = 4
+    MAP = map.Map(mapsize)
+    MOVE = move.Move(mapsize)
     CONTROL = control.Control()
-    # while 1
-    while True:
-        # TODO get input
-        dir = CONTROL.getdir()
+    GAMEGOON = True
+    os.system('cls')
+    # MAP.setTestMap()# TODO del
+    MAP.printMap()
 
-        # TODO try move
-        # TODO try true -> move
-        # TODO try false -> restart
-        pass
+    while GAMEGOON:
+        dir = CONTROL.getdir()
+        if dir == Direction.UP:ISCHANGE=MOVE.moveup(MAP)
+        elif dir == Direction.DOWN:ISCHANGE=MOVE.movedown(MAP)
+        elif dir == Direction.LEFT:ISCHANGE=MOVE.moveleft(MAP)
+        elif dir == Direction.RIGHT:ISCHANGE=MOVE.moveright(MAP)
+        else:continue
+        if ISCHANGE:
+            os.system('cls')
+            if MAP.addone():MAP.printMap()
+            else:GAMEGOON=False
+        else:
+            # TODO try false -> restart
+            pass
 
 
 if __name__ == '__main__':
