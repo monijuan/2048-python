@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# @Auth      :模拟卷
+# @Auth      :monijuan
 # @Time      :2020/11/26 16:02
 # @CSDN      :https://blog.csdn.net/qq_34451909
 # @File      :core.py

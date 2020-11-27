@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# @Auth      :Yin Zhijie
+# @Auth      :monijuan
 # @Time      :2020/11/26 16:03
-# @Email     :yinzhijie@ilinkin.com.cn
+# @CSDN      :https://blog.csdn.net/qq_34451909
 # @File      :map.py
 # @Software  :PyCharm
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
