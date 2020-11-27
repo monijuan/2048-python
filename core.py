@@ -5,37 +5,28 @@
 # @File      :core.py
 # @Software  :PyCharm
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-import os
 import map
 import control
 import move
-from direction import Direction
 
-def main():
-    mapsize = 4
-    MAP = map.Map(mapsize)
-    MOVE = move.Move(mapsize)
-    CONTROL = control.Control()
-    GAMEGOON = True
-    os.system('cls')
-    # MAP.setTestMap()# TODO del
-    MAP.printMap()
+def start():
+    mapsize = 4                 # 定义尺寸4*4
+    MAP = map.Map(mapsize)      # 初始化【面板】
+    MOVE = move.Move(mapsize)   # 初始化【移动面板的工具】
+    CONTROL = control.Control() # 初始化【获取键盘的工具】
 
-    while GAMEGOON:
-        dir = CONTROL.getdir()
-        if dir == Direction.UP:ISCHANGE=MOVE.moveup(MAP)
-        elif dir == Direction.DOWN:ISCHANGE=MOVE.movedown(MAP)
-        elif dir == Direction.LEFT:ISCHANGE=MOVE.moveleft(MAP)
-        elif dir == Direction.RIGHT:ISCHANGE=MOVE.moveright(MAP)
-        else:continue
-        if ISCHANGE:
-            os.system('cls')
-            if MAP.addone():MAP.printMap()
-            else:GAMEGOON=False
-        else:
-            # TODO try false -> restart
-            pass
-
+    # MAP.setTestMap_1()  # 自定义初始化，用于测试
+    MAP.printMap()      # 显示初始面板
+    GAMEOVER = False
+    while GAMEOVER==False:  # 循环主体
+        dir = CONTROL.getdir()              # 获取键盘方向
+        ISCHANGE = MOVE.movemap(MAP,dir)    # 根据方向执行操作，返回【面板】是否有变化
+        if ISCHANGE:                        # 如果【面板】有变化
+            LASTONE = MAP.addone()          #   肯定可以添加，返回是不是最后一个空
+            MAP.printMap()                  #   打印面板
+            # 如果填充是最后一个空，则判断是否不能再操作
+            GAMEOVER = MAP.isend() if LASTONE else False
+    print('Game over!')
 
 if __name__ == '__main__':
-    main()
+    start()
